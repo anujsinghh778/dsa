@@ -4,7 +4,7 @@ public:
         int a =1;
         int b =2;
         int c =0;
-        if(n==0||n==1){
+        if(n==0||n==1||n==2){
             return n;
         }
         for(int i=2;i<n;i++){
@@ -13,6 +13,6 @@ public:
             a=b;
             b=c;
         }
-        return b;
+        return c;
     }
 };
