@@ -10,50 +10,18 @@
  * };
  */
 class Solution {
-public: 
-//  RECURRCION
-
-
-
-    // vector<int>inod;
-    // void inorder(TreeNode* root){
-    //     if(root==NULL){
-    //         return;
-    //     }
-    //     inorder(root->left);
-    //     inod.push_back(root->val);
-    //     inorder(root->right);
-    // }
-
-    vector<int> inorderTraversal(TreeNode* root) {
-    //     inorder(root);
-    //     return inod;
-    // }
-
-
-// ITERATIVE
-
-
-
-        stack<TreeNode*>st;
-        vector<int>inorder;
-        TreeNode*node=root;
-
-        while(true){
-            if(node!=NULL){
-                st.push(node);
-                node=node->left;
-            }
-            else{
-                if(st.empty()){
-                    break;
-                }
-                node = st.top();
-                st.pop();
-                inorder.push_back(node->val);
-                node=node->right;
-            }
+public:
+    vector<int>ans;
+    void inorder(TreeNode*root){
+        if(root==NULL){
+            return;
         }
-        return inorder;
+        inorder(root->left);
+        ans.push_back(root->val);
+        inorder(root->right);
+    }
+    vector<int> inorderTraversal(TreeNode* root) {
+        inorder(root);
+        return ans;
     }
 };
