@@ -23,14 +23,8 @@ public:
         if(count==3){
             return d;
         }
-        if(count==2){
-            return d;
-        }
         if(count==1){
             return e;
-        }
-        if(count==0){
-            return f;
         }
         return f;
     }
